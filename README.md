@@ -86,8 +86,8 @@ The Playwright browser mode (headless or headed) is controlled from:
 
 To switch between modes, update:
 -Infrastructure/BrowserConfiguration.java
-	.setHeadless(true)  // Runs in background without opening a browser window
-	.setHeadless(false) // Opens the browser visibly for debugging
+	-.setHeadless(true)  // Runs in background without opening a browser window
+	-.setHeadless(false) // Opens the browser visibly for debugging
 
 ---
 
@@ -96,7 +96,7 @@ To switch between modes, update:
 Run the main suite file:
 
 ```bash
-testng Saucedemo.xml
+testng `Saucedemo.xml`
 
 Run the Individual Test Modules:
 
