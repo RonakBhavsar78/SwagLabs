@@ -54,7 +54,7 @@ public class AccessibilityUtil {
 		
 	}
 	
-	
+	// write pagewise Accesiblity log in .txt file.
 	private static void writeTxtReport(String pageName, JSONArray violations, Map<String, String> fixMap) throws IOException {
         Path logPath = Paths.get("TestResult/Accesiblitylog");
         Files.createDirectories(logPath);
@@ -89,7 +89,7 @@ public class AccessibilityUtil {
         }
     }
 	
-	
+	//Write Accesiblity log in Excel sheet.
 	private static void writeExcelReport(String pageName, JSONArray violations, Map<String, String> fixMap, String excelPath) throws IOException {
         Workbook workbook;
         Sheet sheet;
