@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="swag login">
+  <parameter name="ClassName" value="UserLogin"/>
+  <test thread-count="5" name="swag login">
+    <classes>
+      	<class name="ManageLogin.UserLogin">
+      		<methods>
+      			<include name="testLoginUser">
+      			<parameter name="PropertyFileName" value="ManageLogin/Login.properties"/>
+      			</include>
+      		</methods>
+      	</class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

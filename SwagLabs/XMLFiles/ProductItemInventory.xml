@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Inventory">
+  <parameter name="ClassName" value="ProductItemInventory"/>
+  <test thread-count="5" name="ProductItemInventory">
+    <classes>
+      <class name="ManageInventory.ProductItemInventory">
+      <methods>
+      		<include name="testProductItem">
+      			<parameter name="PropertyFileName" value="ManageInventory/Inventory.properties"/>
+      		</include>
+      		<include name="testProductPrice">
+      			<parameter name="PropertyFileName" value="ManageInventory/Inventory.properties"/>
+      		</include>
+      		<include name="testProductAddtoCart">
+      			<parameter name="PropertyFileName" value="ManageInventory/Inventory.properties"/>
+      		</include>
+      		<include name="testCheckout">
+      			<parameter name="PropertyFileName" value="ManageInventory/Inventory.properties"/>
+      		</include>
+      </methods>
+      </class>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
