@@ -17,13 +17,14 @@ public class Login {
 	 * @throws IOException 
 	*/
  	public static void userLogin(String PropertyFileName) throws IOException {
- 		
+
+		//Handle Acccesiblity of login page.	
  		AccessibilityUtil.handleAccessibility(BrowserConfiguration.page, "login");
-        VisualTestUtil.runVisualTest(BrowserConfiguration.page, "Login", "login");
+		//Take a screenshots for visual test.	
+        	VisualTestUtil.runVisualTest(BrowserConfiguration.page, "Login", "login");
  		// Read user name and password from Excel
- 	    String username = Infrastructure.ReadData.getCellValue("TestData/LoginDetails.xlsx", "Logincredentials", 1, 0); 
- 	    String password = Infrastructure.ReadData.getCellValue("TestData/LoginDetails.xlsx", "Logincredentials", 1, 1);
- 		
+ 		String username = Infrastructure.ReadData.getCellValue("TestData/LoginDetails.xlsx", "Logincredentials", 1, 0); 
+ 		String password = Infrastructure.ReadData.getCellValue("TestData/LoginDetails.xlsx", "Logincredentials", 1, 1);
  		WebControls.setvalueForTextbox(PropertyFileName, "Username", username);
   		WebControls.setvalueForTextbox(PropertyFileName, "Password", password);
   		WebControls.clickonButton(PropertyFileName, "Login");
