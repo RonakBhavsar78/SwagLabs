@@ -30,7 +30,9 @@ public class ProductInventory {
 	public static void ProductsortNamesDescending(String PropertyFileName) {
 		
 		try {
+			//Handle Accesiblity of product inventory page.
 			AccessibilityUtil.handleAccessibility(BrowserConfiguration.page, "Productinventory");
+			//Take screenshot of product inventory page for visual test.
 			VisualTestUtil.runVisualTest(BrowserConfiguration.page, "ProductInventory", "Productinventory");
 			WebControls.selectValueByOption(PropertyFileName, "ProductSorting", "za");
 			BrowserConfiguration.page.waitForTimeout(1000);
