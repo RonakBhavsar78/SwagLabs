@@ -27,6 +27,7 @@ public class BrowserConfiguration {
 	public static Path sessionFile;
 	//below code will create instance of ReadProperties class.
 	public static ReadProperties webControl = new ReadProperties();
+	// Pass the Project URL to Run the Script
 	public static String baseURL = "https://www.saucedemo.com/";
 	
 	/**
@@ -43,7 +44,12 @@ public class BrowserConfiguration {
 			e.printStackTrace();
 		}
 	}
-	
+
+	/**
+	 * This initializeBrowser function is initializes the Playwright browser, context, and page.
+	 * <p>
+ 	 * Sets up the session storage, maximizes the window, and navigates to the base URL.
+	 */
 	public static void initializeBrowser() {
 		String OS = System.getProperty("os.name").toUpperCase();
 		System.out.println("Current Operating System :" + OS);
@@ -51,8 +57,11 @@ public class BrowserConfiguration {
 		Date date = new Date();
 		String executionDate = dateFormat.format(date);
 		System.out.println("Script Execution Date and Time :" + executionDate);
-		
+
+		// Create a Playwright instance
 		playwright = Playwright.create();
+		// Set headless mode to true to run browser in the background (without UI)
+                // Set it to false if you want to see the browser during execution
 		browser = playwright.chromium().launch(
 				new BrowserType.LaunchOptions()
 				.setHeadless(false)
